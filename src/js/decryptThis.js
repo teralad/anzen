@@ -22,6 +22,7 @@ export const decryptThis = async (
     const message = await openpgp.readMessage({
       armoredMessage: readedFile, // parse armored message
     });
+    // eslint-disable-next-line no-unused-vars
     const { data: decrypted, signatures } = await openpgp.decrypt({
       message,
       verificationKeys: publicKeyIN, // optional
